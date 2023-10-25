@@ -4,9 +4,11 @@ export default function Menu() {
         <>
         <h2>Menu</h2>
         <nav>
-            <a> <Link to={'/'}>Home</Link></a>
-            <a><Link to={'/about'}>About</Link></a>
-            <a><Link to={'/privacy'}>Privacy</Link></a>
+            {/* The public API for rendering a history-aware <a> */}
+            <Link to={'/'}>Home</Link>
+            <Link to={'/about'}>About</Link>
+            <Link to={'/privacy'}>Privacy</Link>
+            <Link to={'/privacy'}>Privacy</Link>
         </nav>
         </>
     );
