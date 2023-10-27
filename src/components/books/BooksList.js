@@ -7,6 +7,8 @@ export function BooksList() {
     return (
         <>
             <h2>Books List</h2>
+            <div className="booklist-link"> <Link  to={`/books/newbook`}>add new book</Link></div>
+            <hr/>
             <ul>
                 {
                     books.map((b) => (

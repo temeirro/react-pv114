@@ -7,7 +7,11 @@ import Menu from './components/Menu';
 import { Route, Routes } from "react-router-dom";
 import { BooksLayout } from './components/books/BooksLayout';
 import { BooksList } from './components/books/BooksList';
+import { Book } from './components/books/Book';
+import { NotFound } from './components/NotFound';
+import { NewBook } from './components/books/NewBook';
 function App() {
+
   return (
     <div className='App'>
       <header>
@@ -23,7 +27,8 @@ function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/books" element={<BooksLayout/>} >
               <Route index element={<BooksList/>}/>
-              <Route path=":id" element={<h3>Book 1</h3>}/>
+              <Route path=":id" element={<Book/>}/>
+              <Route path="newbook" element={<NewBook/>}/>
               <Route path="history" element={<h3>Book History</h3>} />
               <Route path="fantazy" element={<h3>Book fantezy</h3>} />
             </Route>
@@ -33,7 +38,7 @@ function App() {
               <Route path="history" element={<h3>Book History</h3>} />
               <Route path="fantazy" element={<h3>Book fantezy</h3>} />
             </Route> */}
-            {/* <Route path="*" element={<NotFound/>}/> */}
+            <Route path="*" element={<NotFound/>}/> 
           </Routes>
   
         </main>
