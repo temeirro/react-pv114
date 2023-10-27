@@ -18,9 +18,20 @@ nav a{
   border-radius: 5px;
   margin: 6px;
   padding: 10px;
+  text-decoration: none;
+  transition: 0.5;
 }
 
 nav a:hover{
   background-color:  rgb(6, 108, 108); 
   cursor:pointer;
+}
+
+aside{
+  border:2px solid gray;
+}
+
+
+.main-container{
+  display: flex;
 }
