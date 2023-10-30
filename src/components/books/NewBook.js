@@ -1,6 +1,9 @@
 import { useRef } from "react";
+import { useOutletContext } from "react-router-dom";
 
 export function NewBook() {
+    const books = useOutletContext();
+    console.log(books);
     let newBook={
         id:4,
         title:"",

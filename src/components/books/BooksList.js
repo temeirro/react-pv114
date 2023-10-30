@@ -3,6 +3,7 @@ import { Link, useOutletContext } from "react-router-dom";
 export function BooksList() {
     const books = useOutletContext();
     console.log(books);
+    
 
     return (
         <>
