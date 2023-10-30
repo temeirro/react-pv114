@@ -2,7 +2,7 @@ import { useParams,useOutletContext } from "react-router-dom";
 
 export function Book() {
     const { id } = useParams();
-    const books = useOutletContext();
+    const [books, setBooks] = useOutletContext();
     console.log(books);
     const book = books.find(b => b.id === parseInt(id));
     console.log(book);

@@ -1,25 +1,33 @@
 import { Link, useOutletContext } from "react-router-dom";
-
+import "./BooksList.css";
 export function BooksList() {
-    const books = useOutletContext();
+    const [books,setBooks] = useOutletContext();
     console.log(books);
     
 
     return (
         <>
-            <h2>Books List</h2>
-            <div className="booklist-link"> <Link  to={`/books/newbook`}>add new book</Link></div>
-            <hr/>
-            <ul>
-                {
-                    books.map((b) => (
-                        <li key={b.id}>
-                            {/* rendering:  <a href="/books/2"> </a> */}
-                            <Link to={`/books/${b.id}`}> {b.title} ({b.pages}) </Link>
-                        </li>
-                    ))
-                }
-            </ul>
-        </>
+            <br></br>
+            <div className="container-newbook"> <Link to ={`/books/newbook`}>Add new book</Link></div>
+            <br></br>
+            <hr></hr>
+            <div className="Books">
+            <table className="BooksTable">
+                    <thead>
+                        <tr>
+                            <th>Titles</th>
+                            <th>Pages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {books.map((b) => (
+                            <tr>
+                                <td><Link to={`/books/${b.id}`}>{b.title}</Link></td>
+                                <td>{b.pages}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                </div>       </>
     );
 }

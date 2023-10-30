@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useOutletContext } from "react-router-dom";
 
 export function NewBook() {
-    const books = useOutletContext();
+    const [books,setBooks] = useOutletContext();
     console.log(books);
     let newBook={
         id:4,
@@ -38,6 +38,9 @@ export function NewBook() {
      const {register,handleSubmit}=useForm();
      const onSubmit=(newBook)=>{
         // console.log({ ...register("title") });
+        newBook.id=books.length+1;
+        // const newBooks=[...books,newBook];
+        setBooks([...books,newBook]);
         console.log(newBook);
      };
 

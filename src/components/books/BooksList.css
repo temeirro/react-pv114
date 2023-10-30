@@ -1,0 +1,38 @@
+.Books {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.BooksTable {
+    
+    width: 60%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    color: #34486b;
+  }
+  
+  .BooksTable th, .BooksTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .BooksTable th {
+    background-color: #34486b;
+    color: white;
+  }
+  
+  .BooksTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .BooksTable tr:hover {
+    background-color: #ddd;
+  }
+ a{
+    color: #34486b;
+    text-decoration: none;
+    transition: 0.5;
+  }
