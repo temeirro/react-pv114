@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 export function NewBook() {
     const [books,setBooks] = useOutletContext();
+    const navigate=useNavigate();
     console.log(books);
     let newBook={
         id:4,
@@ -42,6 +43,7 @@ export function NewBook() {
         // const newBooks=[...books,newBook];
         setBooks([...books,newBook]);
         console.log(newBook);
+        navigate('/books');
      };
 
     return (
