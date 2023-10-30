@@ -17,7 +17,7 @@ export function NewBook() {
         console.log(event.target.value);
         newBook.pages=event.target.value;
     }
-    //===2. ref binnding to input
+    //===2. ref binding to input
     let titleRef=useRef();
     let pagesRef=useRef();
     //for two variant
