@@ -11,9 +11,9 @@ export function EditBook() {
     const { register, handleSubmit } = useForm();
     const onSubmit = (updateBook) => {
         console.log(updateBook);
-        // updateBook.id=book.id;
+        updateBook.id=book.id;
         const updateBooks = books.map(book => {
-            if (parseInt(updateBook.id) === parseInt(book.id)) return updateBook;
+            if (parseInt(updateBook.id) === book.id) return updateBook;
             return book;
         })
 
@@ -30,7 +30,7 @@ export function EditBook() {
                         {/* <label> Id:  </label> */}
                         {/* <input type="text" name="title" onChange={titleChange} required /> */}
                         {/* <input ref={titleRef} type="text" name="title" required /> */}
-                        <input {...register("id")} type="number" name="id" defaultValue={book.id}  hidden/>
+                        <input {...register("id")} type="number" name="id" value={book.id}  disabled   />
                     </div>
                     <div className="container-input">
                         <label> Title:  </label>

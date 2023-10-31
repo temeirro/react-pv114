@@ -32,8 +32,8 @@ function App() {
               <Route path=":id" element={<Book/>}/>
               <Route path="newbook" element={<NewBook/>}/>
               <Route path="edit/:id" element={<EditBook/>}/>
-              <Route path="history" element={<h3>Book History</h3>} />
-              <Route path="fantazy" element={<h3>Book fantezy</h3>} />
+              {/* <Route path="history" element={<h3>Book History</h3>} /> */}
+              {/* <Route path="fantazy" element={<h3>Book fantezy</h3>} /> */}
             </Route>
 
             {/* <Route path="/books" element={<h3>Book list</h3>}>
