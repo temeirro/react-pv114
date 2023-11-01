@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import About from './components/About';
 import { AboutShort } from './components/AboutShort';
@@ -11,6 +12,11 @@ import { Book } from './components/books/Book';
 import { NotFound } from './components/NotFound';
 import { NewBook } from './components/books/NewBook';
 import { EditBook } from './components/books/EditBook';
+import UsersList from './components/users/UsersList';
+// import UsersList from './components/users/UsersList';
+
+
+
 function App() {
 
 
@@ -35,7 +41,7 @@ function App() {
               {/* <Route path="history" element={<h3>Book History</h3>} /> */}
               {/* <Route path="fantazy" element={<h3>Book fantezy</h3>} /> */}
             </Route>
-
+            <Route path="/users" element={<UsersList/>} />
             {/* <Route path="/books" element={<h3>Book list</h3>}>
               <Route path=":id" element={<h3>Book 1</h3>}/>
               <Route path="history" element={<h3>Book History</h3>} />

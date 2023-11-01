@@ -1,0 +1,42 @@
+import { useEffect, useState } from "react";
+// const url = 'https://jsonplaceholder.typicode.com/users';
+let dataForLoad={
+    skip:0,
+    limit: 8
+};
+const apiUrl='https://dummyjson.com/users';
+export default function UsersList() {
+    // useEffect
+    
+    const [users, setUsers]=useState([]);
+  
+    const loadUsers = () => {
+        //https://dummyjson.com/users?limit=8&skip=0
+        let url=apiUrl+`?limit=${dataForLoad.limit}&skip=${dataForLoad.skip}`;
+        dataForLoad.skip+=dataForLoad.limit;
+        console.log(dataForLoad);
+        fetch(url)
+            .then(res => res.json())
+            .then(dataUsers => {
+                console.log(dataUsers.users);
+                setUsers([...users,...dataUsers.users]);
+            })
+            .catch(err => {
+            console.warn(err);
+        });
+    }
+    return (
+        <>
+            <h2>User List</h2>
+            <div style={{ "width" : "90%","textAlign":"start"}}>
+                <ol>
+                    {users.map(user=>
+                        // <li key={user.id}>{user.name} Address: {user.address.city}</li>)}
+                        <li key={user.id}>{user.lastName} {user.firstName} Address: {user.address.city}</li>)}
+                </ol>
+                <button onClick={loadUsers}>Load Users</button>
+            </div>
+        </>
+    );
+
+}
