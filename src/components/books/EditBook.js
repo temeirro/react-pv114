@@ -8,10 +8,17 @@ export function EditBook() {
     const book = books.find(b => b.id === parseInt(id));
     const navigate = useNavigate();
     console.log(books);
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm({
+        defaultValues:{
+            id:book.id,
+            title:book.title,
+            pages: book.pages
+        }
+    });
+    
     const onSubmit = (updateBook) => {
         console.log(updateBook);
-        updateBook.id=book.id;
+        // updateBook.id = book.id;
         const updateBooks = books.map(book => {
             if (parseInt(updateBook.id) === book.id) return updateBook;
             return book;
@@ -30,19 +37,19 @@ export function EditBook() {
                         {/* <label> Id:  </label> */}
                         {/* <input type="text" name="title" onChange={titleChange} required /> */}
                         {/* <input ref={titleRef} type="text" name="title" required /> */}
-                        <input {...register("id")} type="number" name="id" value={book.id}  disabled   />
+                        <input {...register("id")} type="number" name="id"  disabled />
                     </div>
                     <div className="container-input">
                         <label> Title:  </label>
                         {/* <input type="text" name="title" onChange={titleChange} required /> */}
                         {/* <input ref={titleRef} type="text" name="title" required /> */}
-                        <input {...register("title")} type="text" name="title" defaultValue={book.title} required />
+                        <input {...register("title")} type="text" name="title"  required />
                     </div>
                     <div className="container-input">
                         <label> Pages:  </label>
                         {/* <input type="number" name="pages" onChange={pagesChange} required /> */}
                         {/* <input ref={pagesRef} type="number" name="pages"required /> */}
-                        <input {...register("pages")} type="number" name="pages" defaultValue={book.pages} required />
+                        <input {...register("pages")} type="number" name="pages"  required />
                     </div>
                     <div className="containar-button">
                         {/* <input type="submit" onClick={submit} value="Add Book"/> */}
