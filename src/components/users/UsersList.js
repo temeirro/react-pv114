@@ -11,6 +11,9 @@ export default function UsersList() {
     //invoke when the always visualisation
     useEffect(() => {
         console.log("Effect invoke!!!!");
+        return ()=>{
+            console.log("Effect invoke before the component is unmounted (deleted)!!!!");
+        }
     });
 
     //invoke when the users property is changed

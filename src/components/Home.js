@@ -7,10 +7,20 @@ export default function Home() {
         setCurrentTime(new Date().toLocaleTimeString())
     };
 
+    // useEffect(() => {
+    //     console.log("Effect invoke!!!!");
+    //     let timerId=setInterval(timerChange,1000);
+    // },[]);
+    
     useEffect(() => {
-        console.log("Effect invoke!!!!");
-        setInterval(timerChange,1000);
-    },[]);
+        // console.log("Effect invoke!!!!");
+        let timerId=setInterval(timerChange,1000);
+        console.log(timerId);
+        return ()=>{
+            clearInterval(timerId);
+            console.log("deleted");
+        }
+    });
 
     return (
         <>
