@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
 import About from './components/About';
 import { AboutShort } from './components/AboutShort';
 import Privacy from './components/Privacy';
@@ -13,6 +13,7 @@ import { NotFound } from './components/NotFound';
 import { NewBook } from './components/books/NewBook';
 import { EditBook } from './components/books/EditBook';
 import UsersList from './components/users/UsersList';
+import ResponsiveAppBar from './components/ResponsiveAppBar';
 // import UsersList from './components/users/UsersList';
 
 
@@ -23,8 +24,10 @@ function App() {
   return (
     <div className='App'>
       <header>
-        <h1>React PV114</h1>
-        <Menu />
+        {/* <h1>React PV114</h1> */}
+        {/* <Menu /> */}
+        {/* using MUI */}
+      <ResponsiveAppBar/>
       </header>
       <div className="main-container">
         <main>
