@@ -31,7 +31,12 @@ const pages = [
   {
     itemName: 'Users',
     path: 'users'
+  },
+  {
+    itemName: 'Login',
+    path: '/login'
   }
+
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 

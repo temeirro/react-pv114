@@ -2,19 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import AuthProvider from './contexts/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-  <React.StrictMode>
-    {/* instaling =>     npm i react-router-dom */}
-    {/* <BrowserRouter> */}
-    <Router>
-      <App />
-    </Router>
-    {/* </BrowserRouter> */}
-  </React.StrictMode>
+    <React.StrictMode>
+      {/* instaling =>     npm i react-router-dom */}
+      {/* <BrowserRouter> */}
+      <Router>
+      {/* <ThemeProvider> */}
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+        {/* </ThemeProvider> */}
+      </Router>
+      {/* </BrowserRouter> */}
+    </React.StrictMode>
   </>
 );
 

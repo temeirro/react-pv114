@@ -21,11 +21,12 @@ import { AuthContext } from './contexts/AuthContext';
 
 
 function App() {
-  const [userName, setUserName] = useState("");
-  const clearUserName = () => userName = "";
-  const values = { userName, setUserName, clearUserName };
+  // const [userName, setUserName] = useState("");
+  // const clearUserName = () => userName = "";
+  // const values = { userName, setUserName, clearUserName };
   return (
-    <AuthContext.Provider value={values}>
+    // <AuthContext.Provider value={values}>
+    // <AuthProvaider>
       <div className='App'>
         <header>
           {/* <h1>React PV114</h1> */}
@@ -67,7 +68,8 @@ function App() {
           </aside>
         </div>
       </div>
-    </AuthContext.Provider>
+      //</AuthProvaider>
+    // </AuthContext.Provider>
   );
 }
 

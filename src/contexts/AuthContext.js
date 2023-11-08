@@ -1,9 +1,20 @@
-import { createContext } from "react";
+import { createContext,useState } from "react";
 
-export const AuthContext=createContext({
+export const AuthContext = createContext({
     userName: "", //getter
-    setUserName:()=>null, //setter
-    clearUserName:()=>null
+    setUserName: () => null, //setter
+    clearUserName: () => null
 });
+
+export default function AuthProvider(props){
+    const [userName, setUserName] = useState("");
+    const clearUserName = () => userName = "";
+    const values = { userName, setUserName, clearUserName };
+    return (
+        <AuthContext.Provider value={values}>
+            {props.children}
+        </AuthContext.Provider>
+    )
+}
 
 

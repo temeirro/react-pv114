@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../contexts/AuthContext";
 
 export default function Home() {
+    const {userName}= useContext(AuthContext);
     //init state current time
     const [currentTime, setCurrentTime]=useState(new Date().toLocaleTimeString());
     const timerChange=()=>{
@@ -25,7 +27,8 @@ export default function Home() {
     return (
         <>
             <div className="textInfo">
-                <h2>Welcam home</h2>
+                <h2>Welcome home</h2>
+                <h3>{userName}</h3>
             </div>
             <div>
                 {/* <h3>{new Date().toLocaleTimeString()}</h3> */}
