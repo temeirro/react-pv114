@@ -3,18 +3,26 @@ import { useForm } from "react-hook-form";
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function Login() {
+    // const dataAuthContext= useContext(AuthContext)
+    const {setUserName}= useContext(AuthContext)
     const { register, handleSubmit } = useForm({
         defaultValues: {
-            email: '',
+            email: '', //login => userName
             password: ''
         }
     });
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => { 
+        console.log(data); 
+        // dataAuthContext.setUserName(data.email);
+        setUserName(data.email);
+    }
 
     return (
-        <form  style={{width:"80vw",margin: "10 auto"}} onSubmit={handleSubmit(onSubmit)}>
+        <form style={{ width: "40vw", margin: "auto" }} onSubmit={handleSubmit(onSubmit)}>
             <Stack>
                 <FormControl>
                     <InputLabel htmlFor="email">Email address</InputLabel>
@@ -26,7 +34,7 @@ function Login() {
 
                 <FormControl>
                     <InputLabel htmlFor="password">Password</InputLabel>
-                    <Input {...register("password")}  type="password" id="password" aria-describedby="password-helper-text" />
+                    <Input {...register("password")} type="password" id="password" aria-describedby="password-helper-text" />
                     <FormHelperText id="password-helper-text">We'll never share your password.</FormHelperText>
                 </FormControl>
                 {/* <Divider /> */}

@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthContext';
 
 const pages = [
   {
@@ -35,6 +36,7 @@ const pages = [
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
+  const {userName}=React.useContext(AuthContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
@@ -154,9 +156,12 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
+          <h6>{userName}</h6>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
+              
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+
                 <Avatar alt="Remy Sharp" src="https://images.freeimages.com/365/images/istock/previews/9730/97305669-avatar-icon-of-girl-in-a-baseball-cap.jpg" />
               </IconButton>
             </Tooltip>

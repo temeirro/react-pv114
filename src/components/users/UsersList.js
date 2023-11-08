@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// const url = 'https://jsonplaceholder.typicode.com/users';
+// const url = '    ';
 let dataForLoad = {
     skip: 0,
     limit: 8
