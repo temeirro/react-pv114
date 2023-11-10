@@ -8,7 +8,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 function Login() {
     // const dataAuthContext= useContext(AuthContext)
-    const {setUserName}= useContext(AuthContext)
+    const {setUserName, clearUserName}= useContext(AuthContext)
     const { register, handleSubmit } = useForm({
         defaultValues: {
             email: '', //login => userName
@@ -38,11 +38,12 @@ function Login() {
                     <FormHelperText id="password-helper-text">We'll never share your password.</FormHelperText>
                 </FormControl>
                 {/* <Divider /> */}
-                <FormControl>
+                {/* <FormControl> */}
                     <Button type="submit" variant="contained">Login</Button>
+                    <Button type="reset"  variant="contained" onClick={clearUserName}>Clear</Button>
                     {/* <Input type="submit" /> */}
 
-                </FormControl>
+                {/* </FormControl> */}
             </Stack>
         </form>)
 

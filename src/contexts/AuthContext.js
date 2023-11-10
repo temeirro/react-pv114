@@ -6,9 +6,10 @@ export const AuthContext = createContext({
     clearUserName: () => null
 });
 
+
 export default function AuthProvider(props){
     const [userName, setUserName] = useState("");
-    const clearUserName = () => userName = "";
+    const clearUserName = () => setUserName("");
     const values = { userName, setUserName, clearUserName };
     return (
         <AuthContext.Provider value={values}>
