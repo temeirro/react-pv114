@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import { AuthContext } from "../../contexts/authContext";
 
 function Login() {
     // const dataAuthContext= useContext(AuthContext)

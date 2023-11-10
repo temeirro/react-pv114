@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../contexts/AuthContext";
+import { AuthContext } from "../contexts/authContext";
 
 export default function Home() {
     const {userName}= useContext(AuthContext);

@@ -13,7 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../contexts/authContext';
+import { CounterContext } from '../contexts/counterContext';
 
 const pages = [
   {
@@ -35,6 +36,10 @@ const pages = [
   {
     itemName: 'Login',
     path: '/login'
+  },
+  {
+    itemName: 'Counter',
+    path: '/counter'
   }
 
 ];
@@ -42,6 +47,8 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
   const {userName}=React.useContext(AuthContext);
+  const {count}=React.useContext(CounterContext);
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const navigate = useNavigate();
@@ -160,7 +167,7 @@ function ResponsiveAppBar() {
               </Link>
             ))}
           </Box>
-
+          <h4>Counter: {count} </h4>
           <h6>{userName}</h6>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
